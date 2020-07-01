@@ -7,7 +7,8 @@ sudo docker stop "$(sudo docker ps -q  --filter ancestor=$CONTAINER_NAME --forma
 sudo docker run -d --restart=unless-stopped \
 -p 4043:443 \
 -p 8001:80 \
--v $(pwd)/./volDocker/rancher/var/lib/mysql:/var/lib/mysql --restart=unless-stopped \
+-v $(pwd)/./volDocker/rancher/var/lib/rancher:/var/lib/rancher \
+-v $(pwd)/./volDocker/rancher/var/lib/rancher-data:/var/lib/rancher-data \
 $CONTAINER_NAME
 # rancher/server 
 	
